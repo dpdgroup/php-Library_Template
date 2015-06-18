@@ -20,7 +20,7 @@ interface dpdLibraryInterface {
   * 
   * @return array (?)
   */
-  public fucntio getConfiguration();
+  public function getConfiguration();
   
   /**
   * Get a list of parcelshops close to a given location.
