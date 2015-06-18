@@ -41,7 +41,7 @@ interface dpdLibraryInterface {
   * @param integer $limit the maximum amount of shops to return
   * @return array 
   */
-  public function getShops(dpdLocation $location, int $limit = 10);
+  public function getShops(dpdLocation $location, int $limit);
   
   /**
   * Get label(s) for a single order.
