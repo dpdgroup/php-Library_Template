@@ -16,11 +16,22 @@
 
 interface dpdLibraryInterface {
   /**
-  * Get the configuration fields needed for the library to work.
-  * 
-  * @return array (?)
+  * Get the configuration fields needed for the library/api to work.
+  * eg: 
+  *   Delicom API needs delisID, password
+  *   Cloud services need different tokens.
+  * These configuration fields will be show in the modules configuration
+  * @return dpdConfiguration[]
   */
   public function getConfiguration();
+  
+  /**
+  * Get the service that the shipper can use
+  * eg: Classic, Predict, Pickup ...
+  * These services will define what is visible in the checkout
+  * @return dpdService[]
+  */
+  public function getService();
   
   /**
   * Get a list of parcelshops close to a given location.
@@ -43,10 +54,16 @@ interface dpdLibraryInterface {
   /**
   * Get labels for multiple orders.
   * 
-  * @param array $order an array of dpdOrder objects.
-  * @return array
+  * @param dpdOrder[] $order an array of dpdOrder objects.
+  * @return dpdLabel[]
   */
-  public function getLabel(array $orders);
+  public function getLabels(array $orders);
   
-  ...
+  /**
+  * Get T&T for a Label/Label Number
+  * 
+  * @param dpdLabel $label
+  * @return dpdTracking
+  */
+  public function getInfo(dpdLabel $label);
 }
