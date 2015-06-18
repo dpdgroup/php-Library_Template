@@ -39,7 +39,7 @@ interface dpdLibraryInterface {
   * TIP: If possible map the address to geolocation for an optimal location lookup.
   * @param dpdLocation $location location to look up.
   * @param integer $limit the maximum amount of shops to return
-  * @return array 
+  * @return dpdShop[] 
   */
   public function getShops(dpdLocation $location, int $limit);
   
