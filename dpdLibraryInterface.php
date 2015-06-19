@@ -16,6 +16,12 @@
 
 interface dpdLibraryInterface {
   /**
+  * @param dpdCache $cache A simple cache object to save and retreive data.
+  * @return dpdLibraryInterface
+  */
+  public function __construct(dpdCache $cache);
+  
+  /**
   * Get the configuration fields needed for the library/api to work.
   * eg: 
   *   Delicom API needs delisID, password
@@ -41,7 +47,7 @@ interface dpdLibraryInterface {
   * @param integer $limit the maximum amount of shops to return
   * @return dpdShop[] 
   */
-  public function getShops(dpdLocation $location, int $limit);
+  public function getShops(dpdLocation $location, $limit);
   
   /**
   * Get label(s) for a single order.
