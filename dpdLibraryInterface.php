@@ -16,10 +16,11 @@
 
 interface dpdLibraryInterface {
   /**
-  * @param dpdCache $cache A simple cache object to save and retreive data.
-  * @return dpdLibraryInterface
-  */
-  public function __construct(dpdCache $cache);
+   * @param stdObject $config The actual configuration.
+   * @param dpdCache $cache A simple cache object to save and retreive data.
+   * @return dpdLibraryInterface
+   */
+  public function __construct($config, dpdCache $cache);
   
   /**
   * Get the configuration fields needed for the library/api to work.
@@ -29,7 +30,7 @@ interface dpdLibraryInterface {
   * These configuration fields will be show in the modules configuration
   * @return dpdConfiguration[]
   */
-  public function getConfiguration();
+  static function getConfiguration();
   
   /**
   * Get the service that the shipper can use
@@ -37,7 +38,7 @@ interface dpdLibraryInterface {
   * These services will define what is visible in the checkout
   * @return dpdService[]
   */
-  public function getServices();
+  static function getServices();
   
   /**
   * Get a list of parcelshops close to a given location.
