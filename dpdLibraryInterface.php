@@ -55,7 +55,7 @@ interface dpdLibraryInterface {
   * @param dpdOrder $order order details te be used.
   * @return dpdLabel
   */
-  public function getLabel(dpdOrder $order);
+  public function getLabel(dpdOrder $order, $format = dpdLabel::pdf);
   
   /**
   * Get labels for multiple orders.
@@ -63,7 +63,7 @@ interface dpdLibraryInterface {
   * @param dpdOrder[] $order an array of dpdOrder objects.
   * @return dpdLabel[]
   */
-  public function getLabels(array $orders);
+  public function getLabels(array $orders, $format = dpdLabel::pdf);
   
   /**
   * Get T&T for a Label/Label Number
