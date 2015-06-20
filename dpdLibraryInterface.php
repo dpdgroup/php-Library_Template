@@ -37,7 +37,7 @@ interface dpdLibraryInterface {
   * These services will define what is visible in the checkout
   * @return dpdService[]
   */
-  public function getService();
+  public function getServices();
   
   /**
   * Get a list of parcelshops close to a given location.
