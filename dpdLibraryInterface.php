@@ -16,6 +16,12 @@
 
 interface dpdLibraryInterface {
   /**
+   * Unique identifier for the class.
+   * Used in case the platform's variables are limited to a certain amount of chars
+   */
+  const UID;
+  
+  /**
    * @param stdObject $config The actual configuration.
    * @param dpdCache $cache A simple cache object to save and retreive data.
    * @return dpdLibraryInterface
