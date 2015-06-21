@@ -19,7 +19,7 @@ interface dpdLibraryInterface {
    * Unique identifier for the class.
    * Used in case the platform's variables are limited to a certain amount of chars
    */
-  const UID;
+  protected UID;
   
   /**
    * @param stdObject $config The actual configuration.
